@@ -2,6 +2,7 @@ Table of Contents
 
 - [discordEmoji](#discordemoji)
 - [Usage](#usage)
+- [TODO](#todo)
 
 # discordEmoji
 
@@ -19,3 +20,9 @@ Here are some steps to get you up and running.
 - Profit
   - As a side note, `discordEmoji` automatically saves a copy of the emoji you created.
     - The file is located in the `emoji` directory.
+
+# TODO
+
+- Re-format the output file to include newlines
+- Make the interface pretty
+- Executable? Maybe? :tm:
