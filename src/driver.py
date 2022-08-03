@@ -8,7 +8,7 @@ version = 'v0.1.20'
 clock = datetime.now()
 timestamp = clock.strftime("%Y-%m-%d")
 time = clock.strftime("%Y%m%d%H%M")
-emojiTime = clock.strftime("%H:%M:%S - %d/%m/%Y")
+emojiTime = clock.strftime("%H:%M:%S - %m/%d/%Y")
 spacer = "| ------------------------------------------------------ |"
 info = Fore.BLUE + '[INFO] ' + Fore.RESET
 def getInput():
