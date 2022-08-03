@@ -1,0 +1,15 @@
+{
+    "Title": "EmojiMaker - Sample Data",
+    "Timestamp": "00:26:51 - 03/08/2022",
+    "stats": {
+        "Max Characters Per Message": 4000,
+        "Nitro Status": "y",
+        "Emoji": ":yes:",
+        "Length": 5
+    },
+    "One Line Of The Finished Emoji": ":yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes::yes:",
+    "Result Below": "--------------------------------------------",
+    "Finished Emoji": {
+        "emoji": ":yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - :yes::yes::yes::yes::yes::yes::yes::yes::yes::yes: - "
+    }
+}
