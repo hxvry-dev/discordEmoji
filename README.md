@@ -17,4 +17,5 @@ Here are some steps to get you up and running.
 - Run `main.py`
 - Supply the necessary configuration information
 - Profit
-  - As a side note, `discordEmoji` automatically saves a copy of the emoji you created, allowing for easy access to all of your copy paste needs :)
+  - As a side note, `discordEmoji` automatically saves a copy of the emoji you created.
+    - The file is located in the `emoji` directory.
