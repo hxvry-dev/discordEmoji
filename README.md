@@ -23,6 +23,6 @@ Here are some steps to get you up and running.
 
 # Maybe do eventually...
 
-- Re-format the output file to include newlines - In Progress :tm:
+- Re-format the output file to include newlines - **In Progress** :tm:
 - Make the interface pretty
 - Executable? Maybe? :tm:
