@@ -164,3 +164,4 @@ cython_debug/
 /requirements.txt
 /log
 .gitignore
+/__*.py
