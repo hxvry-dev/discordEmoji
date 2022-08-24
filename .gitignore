@@ -162,5 +162,5 @@ cython_debug/
 # Extensions
 /.vscode
 /requirements.txt
-.gitignore
+/.gitignore
 /.beta
