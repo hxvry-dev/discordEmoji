@@ -2,4 +2,4 @@ import driver
 import config
 
 e = driver.Emoji()
-e.makeEmoji(settings.ns,settings.es,settings.ts)
+e.makeEmoji(config.ns,config.es,config.ts)
