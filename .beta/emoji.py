@@ -1,5 +1,5 @@
 import driver
-import config
+from . import config
 
 e = driver.Emoji()
 e.makeEmoji(config.ns,config.es,config.ts)
