@@ -2,7 +2,7 @@
 
 import pprint
 import json
-from . import config
+import config
 from colorama import *
 from datetime import *
 init()
