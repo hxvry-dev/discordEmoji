@@ -60,9 +60,3 @@ def getInput():
 
     f.write(json.dumps(emoji, indent=4))
     f.close()
-
-def main():
-    getInput()
-
-if __name__ == "__main__":
-    main()
