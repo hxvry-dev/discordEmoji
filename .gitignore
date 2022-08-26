@@ -160,6 +160,4 @@ cython_debug/
 #.idea/
 
 # Extensions
-/.vscode
-#/.beta
-/.gitignore
+/.vscodes
