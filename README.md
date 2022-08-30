@@ -1,9 +1,3 @@
-Table of Contents
-
-- [discordEmoji](#discordemoji)
-- [Usage](#usage)
-- [Maybe do eventually...](#maybe-do-eventually)
-
 # discordEmoji
 
 Short script that generates large blocks of text. Used in Discord chats. Not responsible for getting you banned.
