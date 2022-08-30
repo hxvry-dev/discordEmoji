@@ -3,9 +3,7 @@
 import pprint
 import json
 import config as c
-from colorama import *
 from datetime import *
-init()
 
 emoji = {}
 stats = []
@@ -22,13 +20,16 @@ class Emoji:
     def __init__(self):
         self.e = emoji
         self.s = stats
-        self.ts = c.ts
         self.en = c.en
         self.ns = c.ns
+        self.ts = c.ts
     
     def makeEmoji(self, en, ns, ts):
-        stats.extend((ts, en, ns))
-        emoji['Emoji'] = stats[2]
-        emoji['Nitro Status'] = stats[1]
+        stats.append(en)
+        stats.append(ns)
+        stats.append(ts)
+        
         print(stats)
+        emoji['Emoji'] = stats[1]
+        emoji['Nitro Status'] = stats[0]
         print(json.dumps(emoji, indent=4))
