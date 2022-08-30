@@ -1,6 +1,6 @@
 
-/.vscode
-/.venv
-/.beta
-/requirements.txt
-/.gitignore
+.vscode
+.venv
+.beta
+requirements.txt
+.gitignore
