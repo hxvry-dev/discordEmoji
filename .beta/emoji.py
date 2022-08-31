@@ -3,5 +3,7 @@ import config as c
 
 e = driver.Emoji()
 
-###########['y', 'yes', '20220829_yes_231419', '20220829', '231419', ':yes:', 'yes', 5]
+#   0    1     2               3                4          5        6       7    8
+#   |    |     |               |                |          |        |       |    |
+# ['y', 'y', 'yes', '20220830_yes_214736', '20220830', '214736', ':yes:', 'yes', 5]
 e.gainIntel(c.inline,c.ns,c.en,c.ts,c.date,c.time,c.en_formatted,c.en_lower,c.en_length)
