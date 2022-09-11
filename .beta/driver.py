@@ -1,6 +1,7 @@
 # Beta release v1.0.2
 
 import pprint
+import pandas as pd
 import json
 import config as c
 from datetime import *
@@ -34,8 +35,13 @@ class Emoji:
         print(self.stats)
         self.f.write(json.dumps(self.emoji, indent=4))
 
+    def makeEmoji(self, *args):
+        for arg in args:
+            self.emojiList.append(arg)
+
     def __init__(self):
         self.f = c.f
+        self.emojiList = []
         self.emoji = {}
         self.stats = {}
         self.dump = json.dumps(self.emoji, indent=4)

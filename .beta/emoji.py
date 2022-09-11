@@ -6,6 +6,8 @@ e = driver.Emoji()
 e.gainIntel(c.inline, c.ns, c.en, c.ts, c.date, c.time,
             c.en_formatted, c.en_lower, c.en_length)
 
+e.makeEmoji(c.en_length, c.en_formatted, c.en_lower)
+
 '''
     "index": "value"
     "Final Stats": {
