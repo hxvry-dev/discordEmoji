@@ -23,4 +23,4 @@ df = pd.DataFrame()
 
 ts = date + "_" + en_lower + "_" + time
 
-f = open("./emoji/" + dt + "-" + en_lower + "-beta.json", "w", newline="")
+# f = open("./emoji/" + dt + "-" + en_lower + "-beta.csv", "w", newline="")

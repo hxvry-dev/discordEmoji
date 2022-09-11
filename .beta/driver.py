@@ -29,8 +29,7 @@ class Emoji:
             "Formatted Emoji": self.stats[6],
             "Length of the Formatted Emoji": self.stats[8],
         }
-        self.emoji["Final Stats"] = self.stats
-        print(self.emoji)
+        # print(self.emoji)
         print(self.stats)
 
     def makeEmoji(self, *args):
