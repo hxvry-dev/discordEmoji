@@ -16,11 +16,11 @@ class Emoji:
     # TODO: FINISH this!
 
     def gainIntel(self, *args):
-        i = 0
+        self.i = 0
         for arg in args:
-            self.stats[i] = arg
-            i += 1
-        self.emoji["Stats"] = {
+            self.stats[self.i] = arg
+            self.i += 1
+        self.emoji = {
             "Emoji": self.stats[2],
             "Nitro Status": self.stats[1],
             "Time": self.stats[5],
@@ -29,17 +29,25 @@ class Emoji:
             "Formatted Emoji": self.stats[6],
             "Length of the Formatted Emoji": self.stats[8],
         }
-        # print(self.emoji)
-        print(self.stats)
+        print(
+            "\n\nEmoji Stats [Formatted]\n"
+            + str(self.emoji)
+            + "\n\nEmoji Stats [Unformatted]\n"
+            + str(self.stats)
+        )
 
     def makeEmoji(self, *args):
         for arg in args:
             self.emojiList.append(arg)
 
+        self.df = pd.DataFrame(data=self.emoji, index=[0])
+
+        print("makeEmoji:{}".format(self.df) + "Columns:{}".format(self.df.columns))
+
     def __init__(self):
         self.pp = c.pp
         # self.f = c.f
-        self.df = c.df
+        self.df = None
         self.emojiList = []
         self.stats = {}
         self.emoji = {}

@@ -1,5 +1,4 @@
 from datetime import *
-import pandas as pd
 import pprint
 import re
 
@@ -18,8 +17,6 @@ date = clock.strftime("%Y%m%d")
 time = clock.strftime("%H%M%S")
 dt = clock.strftime("%Y%m%d%H%M")
 pp = pprint.PrettyPrinter()
-
-df = pd.DataFrame()
 
 ts = date + "_" + en_lower + "_" + time
 
