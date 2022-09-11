@@ -1,13 +1,15 @@
-import driver
-import config as c
-
-e = driver.Emoji()
-
-e.gainIntel(c.inline, c.ns, c.en, c.ts, c.date, c.time,
-            c.en_formatted, c.en_lower, c.en_length)
-
-'''
-    "index": "value"
+{
+    "Emoji": "yes",
+    "Nitro Status": "y",
+    "Stats": {
+        "Timestamp": "20220910_yes_222046",
+        "Time": "222046",
+        "Date": "20220910",
+        "Length of the Formatted Emoji": 5
+    },
+    "Formatted Emoji": [
+        ":yes:"
+    ],
     "Final Stats": {
         "Stats": {
             "0": "y",
@@ -21,4 +23,4 @@ e.gainIntel(c.inline, c.ns, c.en, c.ts, c.date, c.time,
             "8": 5
         }
     }
-'''
+}

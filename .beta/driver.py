@@ -5,25 +5,28 @@ import json
 import config as c
 from datetime import *
 
+
 class Emoji:
     # Welcome to the EmojiMaker v2.0!
     # To start, please supply the following configuration data:
-        # - The Discord emoji you want to create (For example :fire:)
-        # - Whether or not you have Discord Nitro (To determine how long to make the message)
-        # TODO: Create the ability to specify how many emoji are in each row
-        # TODO: FINISH this!
-    
+    # - The Discord emoji you want to create (For example :fire:)
+    # - Whether or not you have Discord Nitro (To determine how long to make the message)
+    # TODO: Create the ability to specify how many emoji are in each row
+    # TODO: FINISH this!
+
     def gainIntel(self, *args):
+        i = 0
         for arg in args:
-            self.stats.append(arg)
+            self.stats[i] = arg
+            i += 1
         self.emoji['Emoji'] = self.stats[2]
         self.emoji['Nitro Status'] = self.stats[1]
-        self.emoji['Stats'] = {
+        self.emoji['Stats'] = ({
             "Timestamp": self.stats[3],
             "Time": self.stats[5],
             "Date": self.stats[4],
             "Length of the Formatted Emoji": self.stats[8]
-            }
+        })
         self.emoji['Formatted Emoji'] = [self.stats[6]]
         self.emoji['Final Stats'] = {
             "Stats": self.stats
@@ -34,7 +37,7 @@ class Emoji:
     def __init__(self):
         self.f = c.f
         self.emoji = {}
-        self.stats = []
+        self.stats = {}
         self.dump = json.dumps(self.emoji, indent=4)
         self.en = c.en
         self.en_lower = c.en_lower
