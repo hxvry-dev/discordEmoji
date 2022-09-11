@@ -1,8 +1,8 @@
 # Beta release v1.0.2
 
-import pprint
 import pandas as pd
 import json
+import csv
 import config as c
 from datetime import *
 
@@ -20,30 +20,30 @@ class Emoji:
         for arg in args:
             self.stats[i] = arg
             i += 1
-        self.emoji['Emoji'] = self.stats[2]
-        self.emoji['Nitro Status'] = self.stats[1]
-        self.emoji['Stats'] = ({
-            "Timestamp": self.stats[3],
+        self.emoji["Stats"] = {
+            "Emoji": self.stats[2],
+            "Nitro Status": self.stats[1],
             "Time": self.stats[5],
             "Date": self.stats[4],
-            "Length of the Formatted Emoji": self.stats[8]
-        })
-        self.emoji['Formatted Emoji'] = [self.stats[6]]
-        self.emoji['Final Stats'] = {
-            "Stats": self.stats
+            "Timestamp": self.stats[3],
+            "Formatted Emoji": self.stats[6],
+            "Length of the Formatted Emoji": self.stats[8],
         }
+        self.emoji["Final Stats"] = self.stats
+        print(self.emoji)
         print(self.stats)
-        self.f.write(json.dumps(self.emoji, indent=4))
 
     def makeEmoji(self, *args):
         for arg in args:
             self.emojiList.append(arg)
 
     def __init__(self):
-        self.f = c.f
+        self.pp = c.pp
+        # self.f = c.f
+        self.df = c.df
         self.emojiList = []
-        self.emoji = {}
         self.stats = {}
+        self.emoji = {}
         self.dump = json.dumps(self.emoji, indent=4)
         self.en = c.en
         self.en_lower = c.en_lower

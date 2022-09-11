@@ -1,3 +1,5 @@
+# Use pip3
 datetime
 colorama
 pandas
+black
