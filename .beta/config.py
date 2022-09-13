@@ -19,5 +19,3 @@ dt = clock.strftime("%Y%m%d%H%M")
 pp = pprint.PrettyPrinter()
 
 ts = date + "_" + en_lower + "_" + time
-
-# f = open("./emoji/" + dt + "-" + en_lower + "-beta.csv", "w", newline="")

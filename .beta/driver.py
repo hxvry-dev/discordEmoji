@@ -46,7 +46,6 @@ class Emoji:
 
     def __init__(self):
         self.pp = c.pp
-        # self.f = c.f
         self.df = None
         self.emojiList = []
         self.stats = {}
