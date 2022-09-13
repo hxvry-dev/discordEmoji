@@ -42,7 +42,7 @@ class Emoji:
 
         self.df = pd.DataFrame(data=self.emoji, index=[0])
 
-        print("makeEmoji:{}".format(self.df) + "Columns:{}".format(self.df.columns))
+        print("\n\n{}".format(self.df) + "\nColumns:{}".format(self.df.columns))
 
     def __init__(self):
         self.pp = c.pp
