@@ -13,10 +13,10 @@ spacer = "| ------------------------------------------------------ |"
 info = Fore.BLUE + '[INFO] ' + Fore.RESET
 def getInput():
     print(spacer)
-    print("| ------- " + Fore.RED + intro + Fore.RESET + " ------- |")
-    print('| -------------------- ' + Fore.GREEN + version + Fore.RESET + ' ------------------------- |')
-    print("| ------------------ " + Fore.RED + timestamp + Fore.RESET + " ------------------------ |")
-    print(spacer)
+    print(info + "| ------- " + Fore.RED + intro + Fore.RESET + " ------- |")
+    print(info + '| -------------------- ' + Fore.GREEN + version + Fore.RESET + ' ------------------------- |')
+    print(info + "| ------------------ " + Fore.RED + timestamp + Fore.RESET + " ------------------------ |")
+    print(info + spacer)
     inputEmoji = input("| EMOJI >> ")
     preEmoji = ":" + inputEmoji + ":"
     f = open('./emoji/' + time + "-" + inputEmoji + '.json', 'w')
@@ -45,8 +45,8 @@ def getInput():
             emoji['stats'] = dict(stats)
             break
     print(spacer)
-    print('| ---------- ' + info + 'THANK YOU, PROCESSING...' + ' ----------- |')
-    print('| ---------- ' + info + 'Filename: ' + time + '-' + inputEmoji)
+    print(info + '| ---------- ' + 'THANK YOU, PROCESSING...' + ' ----------- |')
+    print(info + '| ---------- ' + 'Filename: ' + time + '-' + inputEmoji)
     
     for i in range(10):
         finishedEmoji['emoji'] += (stats['Emoji'] * 10) + ' - '
