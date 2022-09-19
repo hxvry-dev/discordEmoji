@@ -9,20 +9,21 @@ clock = datetime.now()
 timestamp = clock.strftime("%Y-%m-%d")
 time = clock.strftime("%Y%m%d%H%M")
 emojiTime = clock.strftime("%H:%M:%S - %m/%d/%Y")
-spacer = "| ------------------------------------------------------ |"
 info = Fore.BLUE + '[INFO] ' + Fore.RESET
+log = Fore.LIGHTBLACK_EX + '[LOG]  ' + Fore.RESET
+spacer = info + "| ------------------------------------------------------ |"
 def getInput():
     print(spacer)
     print(info + "| ------- " + Fore.RED + intro + Fore.RESET + " ------- |")
     print(info + '| -------------------- ' + Fore.GREEN + version + Fore.RESET + ' ------------------------- |')
     print(info + "| ------------------ " + Fore.RED + timestamp + Fore.RESET + " ------------------------ |")
-    print(info + spacer)
-    inputEmoji = input("| EMOJI >> ")
+    print(spacer)
+    inputEmoji = input(log + "| EMOJI >> ")
     preEmoji = ":" + inputEmoji + ":"
     f = open('./emoji/' + time + "-" + inputEmoji + '.json', 'w')
-    
-    while 'INVALID!!':
-        answer = str(input("| DO YOU HAVE NITRO? [Y/n] >> ")).lower().strip('eso')
+    answer = str(input(log + "| DO YOU HAVE NITRO? [Y/n] >> ")).lower().strip('eso')
+
+    while answer:
         emoji = {
             "Title": "EmojiMaker",
             "Timestamp": emojiTime
@@ -46,7 +47,7 @@ def getInput():
             break
     print(spacer)
     print(info + '| ---------- ' + 'THANK YOU, PROCESSING...' + ' ----------- |')
-    print(info + '| ---------- ' + 'Filename: ' + time + '-' + inputEmoji)
+    print(info + '| ---------- ' + 'Filename: ' + time + '-' + inputEmoji + ' ----------- |')
     
     for i in range(10):
         finishedEmoji['emoji'] += (stats['Emoji'] * 10) + ' - '
