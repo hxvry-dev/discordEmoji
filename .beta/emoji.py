@@ -15,9 +15,10 @@ class Emoji:
         t = ts.strftime('%Y%m%d%H%M%S')
         date = ts.strftime("%m%d%Y")
         time = ts.strftime("%H%M%S")
-        self.lines += self.emoji
+        self.lines += "\tEmoji [Not Formatted]\t" + self.emoji
         with open('./emoji/' + t + "-" + self.emoji + '.txt', 'w') as f:
-            f.write(self.lines)
+            f.write("Welcome to the EmojiMaker v2.0!\n\n")
+            f.write(self.lines + '\n')
 
 def main():
     e = Emoji()
