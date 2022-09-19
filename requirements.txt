@@ -1,5 +1,4 @@
 # Use pip3
-datetime
+
+black
 colorama
-pandas
-autopep8
