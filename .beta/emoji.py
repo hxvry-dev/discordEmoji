@@ -1,11 +1,27 @@
-import csv
 import datetime as dt
-import colorama
-import textwrap
+from colorama import Fore
+import re
 
-ts = dt.datetime.now()
-date = ts.strftime("%m%d%Y")
-time = ts.strftime("%H%M%S")
-print(date + " " + time)
+sp = '-----'
+console = Fore.LIGHTBLACK_EX + '[CONSOLE]  ' + Fore.RESET
+info = Fore.BLUE + '[INFO]  ' + Fore.RESET
+class Emoji:
+    def __init__(self):
+        self.lines = ''
+        self.emoji = input(console + "Name of the Emoji as It appears in Discord >> ")
 
-# Using writelines to programatically generate outputs
+    def wFile(self):
+        ts = dt.datetime.now()
+        t = ts.strftime('%Y%m%d%H%M%S')
+        date = ts.strftime("%m%d%Y")
+        time = ts.strftime("%H%M%S")
+        self.lines += self.emoji
+        with open('./emoji/' + t + "-" + self.emoji + '.txt', 'w') as f:
+            f.write(self.lines)
+
+def main():
+    e = Emoji()
+    e.wFile()
+
+if __name__ == '__main__':
+    main()
