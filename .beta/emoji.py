@@ -21,12 +21,13 @@ class Emoji:
         head = '''<!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Emoji Result</title>
   </head>
-  <body></body>
-</html>
-
-        '''
+  <body>
+  <h1 style="padding-left: 5px">Welcome to the EmojiMaker v2.0!</h1></br>
+    <h1 style="padding-left: 15px">{Idea}</h1>
+  </body>
+</html>'''
         with open('./emoji/' + t + "-" + self.emoji + '.html', 'w') as f:
             f.write(head)
 
