@@ -11,9 +11,8 @@ class Emoji:
     self._t = dt.datetime.now().strftime('%Y%m%d%H%M%S')
 
   def basic_body(self):
-    f = open('./emoji/' + self._t + '-' + self.name + '.html', 'w')
+    f = open('./emoji/' + self._t + '-' + self.name + '--dev' + '.html', 'w')
     a = Airium()
-    html = str(a)
     a('<!DOCTYPE html>')
     with a.html(lang='en'):
       with a.head():
@@ -21,6 +20,7 @@ class Emoji:
         a.meta(content='width=device-width, initial-scale=1', name='viewport')
         a.link(href='./content.css', rel='stylesheet')
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
+    html = str(a)
     f.write(html)
     f.close()
 
