@@ -22,9 +22,11 @@ class Emoji:
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
       with a.body():
         with a.div(id='emoji-name-container'):
-          with a.p(id='emojiName'):
-            a.img(src='../emoji/img/1.png')
-            a.code('This is your emoji as it would appear in the Discord Emoji Search bar > ' + self.name)
+          a.img(src='../emoji/img/1.png')
+          with a.span(id='text-container'):
+            a.p('This is your emoji as it appears in the Discord Emoji Search bar > ')
+            with a.code():
+              a(self.name)
 
     html = str(a)
     f.write(html)
