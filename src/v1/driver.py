@@ -20,7 +20,7 @@ def getInput():
     print(spacer)
     inputEmoji = input(log + "| EMOJI >> ")
     preEmoji = ":" + inputEmoji + ":"
-    f = open('./emoji/' + time + "-" + inputEmoji + '.json', 'w')
+    f = open('./emoji/v1/' + time + "-" + inputEmoji + '.json', 'w')
     answer = str(input(log + "| DO YOU HAVE NITRO? [Y/n] >> ")).lower().strip('eso')
 
     while answer:

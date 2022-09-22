@@ -14,7 +14,7 @@ class Emoji:
     #self.name = input(console + "Name of the Emoji as it appears in Discord >> ")
 
   def basic_body(self):          # '-' + self.name + 
-    f = open('./emoji/' + self.t + '--dev' + '-' +  dt.datetime.now().strftime('%M%S') + '.html', 'w')
+    f = open('./emoji/beta/' + self.t + '--dev' + '-' +  dt.datetime.now().strftime('%M%S') + '.html', 'w')
     a = Airium()
     a('<!DOCTYPE html>')
     with a.html(lang='en'):
