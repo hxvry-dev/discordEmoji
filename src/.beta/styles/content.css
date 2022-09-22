@@ -1,0 +1,52 @@
+/*
+ID List
+  container
+  emoji-name-container
+  text-container
+  text
+  text-code
+*/
+  /* #232429 Background */
+  /* #393A3F New */
+  /* #55565B Davi's Grey */
+  /* #75767B Moiety */
+  /* #828388 Old Silver */
+  /* #919297 Gray Blue */
+  /* #ADAEB3 Gravity */
+  /* #C1C2C7 Seashell */
+  /* #D3D4D9 Light Gray */
+  /* #DEDFE4 Light Diamond */
+  /* #F3F4F9 White Smoke */
+  /* #F9FAFF White Smoke Light */
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+  background-color: #232429;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+}
+code {
+  display: inline-block;
+  background-color: #C1C2C7;
+  color: black;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+  border-radius: 3px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+}
+
+.container {
+  background-color: #393A3F;
+  padding: 0.5em;
+  width: fit-content;
+}
+#item {
+  display: inline-block;
+  width: -moz-fit-content;
+  background-color: #55565B;
+}
