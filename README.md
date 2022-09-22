@@ -12,8 +12,8 @@ Here are some steps to get you up and running.
 - Run `main.py`, located in `src/v1/main.py`
 - Supply the necessary configuration information
 - Profit
-  - As a side note, `discordEmoji` automatically saves a copy of the emoji you created.
-    - The file is located in the `emoji` directory.
+  - As a side note, if you are using the CLI (`v1`) version of `discordEmoji`, it will automatically save a copy of the emoji you created.
+    - The file is located in the `emoji` directory the name of the sample `v1` output is `202209191744-yes.json`.
 
 # Maybe do eventually...
 
