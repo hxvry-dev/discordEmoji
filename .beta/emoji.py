@@ -18,7 +18,7 @@ class Emoji:
       with a.head():
         a.meta(charset='utf-8')
         a.meta(content='width=device-width, initial-scale=1', name='viewport')
-        a.link(href='./content.css', rel='stylesheet')
+        a.link(href='../emoji/styles/content.css', rel='stylesheet')
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
     html = str(a)
     f.write(html)
