@@ -20,7 +20,7 @@ class Emoji:
     with a.html(lang='en'):
       with a.head():
         a.meta(charset='utf-8')
-        a.link(href='../.beta/styles/content.css', rel='stylesheet')
+        a.link(href='../../src/v2/styles/content.css', rel='stylesheet')
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
       with a.body():
         with a.div(klass='container'):
