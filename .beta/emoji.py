@@ -18,14 +18,12 @@ class Emoji:
     with a.html(lang='en'):
       with a.head():
         a.meta(charset='utf-8')
-        a.meta(content='width=device-width, initial-scale=1', name='viewport')
-        a.link(href='../emoji/styles/content.css', rel='stylesheet')
+        a.link(href='../.beta/styles/content.css', rel='stylesheet')
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
       with a.body():
-        with a.div(id='emoji-name-container'):
-          with a.span(id='text-container'):
-            with a.p(_t='This is your emoji as it appears in the Discord Emoji Search bar > '):
-              a.code(_t=self.t)
+        with a.div(klass='container'):
+            a.p(id='item', _t='This is your emoji as it appears in the Discord Emoji Search bar >')
+            a.code(_t=self.t)
 
     html = str(a)
     f.write(html)
