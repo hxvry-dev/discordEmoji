@@ -1,12 +1,14 @@
 import datetime as dt
 from colorama import Fore
 from airium import Airium
+import os
 
 sp = '-----'
 console = Fore.LIGHTBLACK_EX + '[CONSOLE]  ' + Fore.RESET
 info = Fore.BLUE + '[INFO]  ' + Fore.RESET
 class Emoji:
   def __init__(self):
+    print(os.getcwd())
     self.t = dt.datetime.now().strftime('%Y%m%d%H%M%S')
     #Commenting this out for easy running of the file
     #self.name = input(console + "Name of the Emoji as it appears in Discord >> ")
