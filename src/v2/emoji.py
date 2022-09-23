@@ -1,20 +1,19 @@
-import datetime as dt
+import random
+import re
 from colorama import Fore
 from airium import Airium
-import os
 
 sp = '-----'
 console = Fore.LIGHTBLACK_EX + '[CONSOLE]  ' + Fore.RESET
 info = Fore.BLUE + '[INFO]  ' + Fore.RESET
 class Emoji:
   def __init__(self):
-    print(os.getcwd())
-    self.t = dt.datetime.now().strftime('%Y%m%d%H%M%S')
-    #Commenting this out for easy running of the file
-    #self.name = input(console + "Name of the Emoji as it appears in Discord >> ")
+    self.x = str(random.randint(1, 9999999))
+    self.name = input(console + "Name of the Emoji as it appears in Discord >> ")
+    self.nitro_status = input(console + "Do you have Discord Nitro? [y/n] >> ").lower().strip('eso')
 
-  def basic_body(self):          # '-' + self.name + 
-    f = open('./emoji/v2/' + self.t + '--beta' + '-' +  dt.datetime.now().strftime('%M%S') + '.html', 'w')
+  def basic_body(self):                            # + self.name + 
+    f = open('./emoji/v2/' + self.x + '-beta-' + self.name + '.html', 'w')
     a = Airium()
     a('<!DOCTYPE html>')
     with a.html(lang='en'):
@@ -24,9 +23,14 @@ class Emoji:
         a.title(_t=f'Welcome to the emojiMaker v2.0!')
       with a.body():
         with a.div(klass='container'):
-            a.p(id='item', _t='This is your emoji as it appears in the Discord Emoji Search bar >')
-            a.code(_t=self.t)
-
+          a.p(id='item', _t='Random number so the file is unique >')
+          a.code(_t=self.x)
+          a.br()
+          a.p(id='item', _t='If you have <code>Discord Nitro</code> or not >')
+          a.code(_t=self.nitro_status)
+          a.br()
+          a.p(id='item', _t='Input formatted to look like an emoji in Discord >')
+          a.code(_t=':' + self.name + ':')
     html = str(a)
     f.write(html)
     f.close()
