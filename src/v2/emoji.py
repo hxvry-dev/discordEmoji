@@ -1,5 +1,5 @@
 import random
-import re
+import time
 from colorama import Fore
 from airium import Airium
 
@@ -15,6 +15,7 @@ class Emoji:
   def basic_body(self):                            # + self.name + 
     f = open('./emoji/v2/' + self.x + '-beta-' + self.name + '.html', 'w')
     a = Airium()
+    print(info + '--BEGINNING BASIC BODY CONSTRUCTION--')
     a('<!DOCTYPE html>')
     with a.html(lang='en'):
       with a.head():
@@ -31,6 +32,8 @@ class Emoji:
           a.br()
           a.p(id='item', _t='Input formatted to look like an emoji in Discord >')
           a.code(_t=':' + self.name + ':')
+    time.sleep(0.5)
+    print(info + '--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--')
     html = str(a)
     f.write(html)
     f.close()
