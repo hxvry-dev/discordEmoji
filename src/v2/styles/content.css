@@ -1,52 +1,76 @@
-/*
-ID List
-  container
-  emoji-name-container
-  text-container
-  text
-  text-code
-*/
-  /* #232429 Background */
-  /* #393A3F New */
-  /* #55565B Davi's Grey */
-  /* #75767B Moiety */
-  /* #828388 Old Silver */
-  /* #919297 Gray Blue */
-  /* #ADAEB3 Gravity */
-  /* #C1C2C7 Seashell */
-  /* #D3D4D9 Light Gray */
-  /* #DEDFE4 Light Diamond */
-  /* #F3F4F9 White Smoke */
-  /* #F9FAFF White Smoke Light */
-/*Imports*/
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+:root {
+  --body: #000000;
+  --body-container-background: #232429;
+  --item-background: #393A3F;
+  --code-background: #55565B;
+  --border-shadow: #75767B;
+  --gray4: #828388;
+  --gray5: #919297;
+  --gray6: #ADAEB3;
+  --gray7: #C1C2C7;
+  --font-color: #D3D4D9;
+  --gray9: #DEDFE4;
+  --gray10: #F3F4F9;
+  --gray11: #F9FAFF;
+
+  --font-size: 14px;
+  --general-text-family: 'Courier New', monospace;
+  --code-text-family: 'Source Code Pro', monospace;
+}
 
 body {
-  background-color: #232429;
-  color: white;
-  font-size: 16px;
-  padding: 20px;
+  background-color: var(--body);
+  margin: auto;
+  font-size: (--font-size);
+  color: var(--font-color);
+
+  padding: 2em;
 }
 code {
+  font-family: var(--code-text-family);
+  background-color: var(--code-background);
+  color: var(--body);
   display: inline-block;
-  background-color: #C1C2C7;
-  color: black;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-  border-radius: 3px;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
-}
 
-.container {
-  background-color: #393A3F;
-  padding: 0.5em;
-  width: fit-content;
+  padding: 0.45em;
+  border-radius: 5px;
+  box-shadow: 2px 2px var(--border-shadow);
 }
 #item {
-  display: inline-block;
-  width: -moz-fit-content;
-  background-color: #55565B;
+  font-family: var(--general-text-family);
+  background-color: var(--item-background);
+  width: fit-content;
+
+  border-style: inset;
+  padding: 0.85em;
+}
+.body-container {
+  background-color: var(--body-container-background);
+  width: 50%;
+  margin: auto;
+
+  padding: 2em;
+}
+#title {
+  font-family: var(--code-text-family);
+  background-color: var(--item-background);
+  width: fit-content;
+  margin: justify;
+  text-align: center;
+
+  border-style: inset;
+  padding-left: 1.85em;
+  padding-right: 1.85em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+.container {
+  width: fit-content;
+  margin: justify;
+
+  padding-top: .75em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: .75em;
 }
