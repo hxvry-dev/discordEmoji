@@ -27,7 +27,8 @@ class Emoji:
         return nitro
 
     def basic_body(self):
-        f = open("./emoji/v2/" + self.x + "-beta-" + self.name + ".html", "w")
+        emoji_name = self.x + "-beta-" + self.name
+        f = open("./emoji/v2/" + emoji_name + ".html", "w")
         a = Airium()
         print(info + "--BEGINNING BASIC BODY CONSTRUCTION--")
         a("<!DOCTYPE html>")
@@ -62,7 +63,10 @@ class Emoji:
         print(info + "--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--")
         html = str(a)
         f.write(html)
+        with open("./emoji/v2/_file.txt", "a+") as p:
+            p.write("\n" + self.x + " >>  " + emoji_name)
         f.close()
+        p.close()
 
 
 def main():
