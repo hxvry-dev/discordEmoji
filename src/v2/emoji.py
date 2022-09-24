@@ -12,11 +12,9 @@ class Emoji:
     def __init__(self):
         self.x = str(random.randint(1, 9999999))
         self.name = input(
-            console + "Name of the Emoji as it appears in Discord >> "
-        ).lower()
+            console + "Name of the Emoji as it appears in Discord >> ").lower()
         self.nitro_status = (
-            input(console + "Do you have Discord Nitro? [y/n] >> ").lower().strip("eso")
-        )
+            input(console + "Do you have Discord Nitro? [y/n] >> ").lower().strip("eso"))
         self.nitro = self.getMsgLength()
 
     def getMsgLength(self):
@@ -42,21 +40,21 @@ class Emoji:
                     a.p(id="title", _t=":" + self.name + ":")
                     with a.div(klass="container"):
                         with a.p(id="item"):
-                            a.strong(_t="Random number so the file is unique >")
+                            a.strong(
+                                _t="Random number so the file is unique >")
                             a.code(_t=self.x)
                         with a.p(id="item"):
-                            a.strong(_t="Whether or not you have Discord Nitro >")
+                            a.strong(
+                                _t="Whether or not you have Discord Nitro >")
                             a.code(_t=self.nitro_status)
                         with a.p(id="item"):
                             a.strong(
-                                _t="The maximum length that your messages can be in Discord >"
-                            )
+                                _t="The maximum length that your messages can be in Discord >")
                             a.code(_t=self.getMsgLength())
                     with a.div(klass="container"):
                         with a.p(id="item"):
                             a.strong(
-                                _t="What your Emoji looks like in the Discord Emoji Search bar >"
-                            )
+                                _t="What your Emoji looks like in the Discord Emoji Search bar >")
                             a.code(_t=":" + self.name + ":")
 
         time.sleep(0.5)
@@ -64,7 +62,8 @@ class Emoji:
         html = str(a)
         f.write(html)
         with open("./emoji/v2/_file.txt", "a+") as p:
-            p.write("\n" + self.x + " >>  " + emoji_name)
+            p.write("\n" + str(time.strftime("%M/%d/%Y")) +
+                    " " + self.x + " >>  " + emoji_name)
         f.close()
         p.close()
 

@@ -1,5 +1,5 @@
 # Use pip3
 
-black
+autopep8
 colorama
 airium
