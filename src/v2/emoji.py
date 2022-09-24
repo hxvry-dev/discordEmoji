@@ -32,6 +32,7 @@ class Emoji:
           a.br()
           a.p(id='item', _t='Input formatted to look like an emoji in Discord >')
           a.code(_t=':' + self.name + ':')
+# I don't wanna change this
     time.sleep(0.5)
     print(info + '--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--')
     html = str(a)
