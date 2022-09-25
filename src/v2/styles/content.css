@@ -37,20 +37,21 @@ code {
   border-radius: 5px;
   box-shadow: 2px 2px var(--border-shadow);
 }
-#item {
-  font-family: var(--general-text-family);
-  background-color: var(--item-background);
-  width: fit-content;
-
-  border-style: inset;
-  padding: 0.85em;
-}
 .body-container {
   background-color: var(--body-container-background);
   width: 50%;
   margin: auto;
 
   padding: 2em;
+}
+.container {
+  width: fit-content;
+  margin: justify;
+
+  padding-top: .75em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: .75em;
 }
 #title {
   font-family: var(--code-text-family);
@@ -65,12 +66,16 @@ code {
   padding-top: 0.75em;
   padding-bottom: 0.75em;
 }
-.container {
+#item {
+  font-family: var(--general-text-family);
+  background-color: var(--item-background);
   width: fit-content;
-  margin: justify;
 
-  padding-top: .75em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: .75em;
+  border-style: inset;
+  padding: 0.85em;
+}
+code #emoji {
+  overflow: scroll;
+  display: inline-block;
+  width: 250px;
 }

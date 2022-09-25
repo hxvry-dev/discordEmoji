@@ -3,19 +3,21 @@ import time
 from colorama import Fore
 from airium import Airium
 
-console = Fore.LIGHTBLACK_EX + "[CONSOLE]  " + Fore.RESET
-info = Fore.BLUE + "[INFO]  " + Fore.RESET
+CONSOLE = Fore.LIGHTBLACK_EX + "[CONSOLE]  " + Fore.RESET
+INFO = Fore.BLUE + "[INFO]  " + Fore.RESET
+STATS = Fore.GREEN + "-- [STATS]  " + Fore.RESET
 airium = Fore.LIGHTGREEN_EX + "[AIRIUM]  " + Fore.RESET
 
 
 class Emoji:
     def __init__(self):
-        self.x = str(random.randint(1, 9999999))
         self.name = input(
-            console + "Name of the Emoji as it appears in Discord >> ").lower()
+            CONSOLE + "Name of the Emoji as it appears in Discord >> ").lower()
         self.nitro_status = (
-            input(console + "Do you have Discord Nitro? [y/n] >> ").lower().strip("eso"))
+            input(CONSOLE + "Do you have Discord Nitro? [y/n] >> ").lower().strip("eso"))
         self.nitro = self.getMsgLength()
+        self.x = str(random.randint(1, 9999999))
+        self.emoji_name = self.x + '-beta-' + self.name
 
     def getMsgLength(self):
         if self.nitro_status == "y":
@@ -24,12 +26,32 @@ class Emoji:
             nitro = 2000
         return nitro
 
+    def makeEmoji(self):
+        msg_len = self.nitro
+        f_en = ':' + self.name + ':'
+        cols = 15
+        max_emojis = int(msg_len / len(f_en))
+        max_rows = int(max_emojis / cols)
+        res = ''''''
+        len_res = len(res)
+        for i in range(max_rows):
+            res += '\n'
+            i + 1
+            for j in range(cols):
+                res += f_en
+                j + 1
+        print(msg_len)
+        res = res[:msg_len]
+        return res
+
     def basic_body(self):
-        emoji_name = self.x + "-beta-" + self.name
-        f = open("./emoji/v2/" + emoji_name + ".html", "w")
+        f = open("./emoji/v2/" + self.emoji_name + ".html", "w")
         p = open("./emoji/v2/_file.txt", 'a+')
         a = Airium()
-        print(info + "--BEGINNING BASIC BODY CONSTRUCTION--")
+        emoji = self.makeEmoji()
+        max_chars = self.getMsgLength()
+        print(CONSOLE + '--BEGINNING BASIC BODY CONSTRUCTION--')
+        time.sleep(0.25)
         a("<!DOCTYPE html>")
         with a.html(lang="en"):
             with a.head():
@@ -51,18 +73,27 @@ class Emoji:
                         with a.p(id="item"):
                             a.strong(
                                 _t="The maximum length that your messages can be in Discord >")
-                            a.code(_t=self.getMsgLength())
+                            a.code(_t=max_chars)
                     with a.div(klass="container"):
                         with a.p(id="item"):
                             a.strong(
                                 _t="What your Emoji looks like in the Discord Emoji Search bar >")
                             a.code(_t=":" + self.name + ":")
-
+                    with a.div(klass="container"):
+                        with a.p(id="item"):
+                            a.strong(
+                                _t="The Finished block of text for use in Discord >")
+                            a.code(id='emoji', _t=emoji)
+                        with a.p(id="item"):
+                            a.strong(
+                                _t="Length of the Final Emoji >")
+                            a.code(_t=len(emoji))
+        print(CONSOLE + '--BEGINNING EMOJI BLOCK WRITING--')
         time.sleep(0.5)
-        print(info + "--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--")
+        print(INFO + "--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--")
         html = str(a)
         f.write(html)
-        p.write(str(time.strftime("%M-%d-%Y ")) + self.x + " >>  " + emoji_name + '\n')
+        p.write(str(time.strftime("%m-%d-%Y ")) + self.x + " >>  " + self.emoji_name + '\n')
         f.close()
         p.close()
 
