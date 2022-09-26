@@ -1,5 +1,7 @@
+import os
 import random
 import time
+import webbrowser
 from colorama import Fore
 from airium import Airium
 
@@ -40,7 +42,6 @@ class Emoji:
             for j in range(cols):
                 res += f_en
                 j + 1
-        print(msg_len)
         res = res[:msg_len]
         return res
 
@@ -51,6 +52,7 @@ class Emoji:
         emoji = self.makeEmoji()
         max_chars = self.getMsgLength()
         print(CONSOLE + '--BEGINNING BASIC BODY CONSTRUCTION--')
+        print(CONSOLE + '--BEGINNING EMOJI BLOCK CONSTRUCTION--')
         time.sleep(0.25)
         a("<!DOCTYPE html>")
         with a.html(lang="en"):
@@ -74,28 +76,35 @@ class Emoji:
                             a.strong(
                                 _t="The maximum length that your messages can be in Discord >")
                             a.code(_t=max_chars)
-                    with a.div(klass="container"):
                         with a.p(id="item"):
                             a.strong(
                                 _t="What your Emoji looks like in the Discord Emoji Search bar >")
                             a.code(_t=":" + self.name + ":")
-                    with a.div(klass="container"):
-                        with a.p(id="item"):
-                            a.strong(
-                                _t="The Finished block of text for use in Discord >")
-                            a.code(id='emoji', _t=emoji)
+                    with a.div(klass='container'):
                         with a.p(id="item"):
                             a.strong(
                                 _t="Length of the Final Emoji >")
                             a.code(_t=len(emoji))
-        print(CONSOLE + '--BEGINNING EMOJI BLOCK WRITING--')
+                        with a.p(id="item"):
+                            a.strong(
+                                _t="The Finished block of text for use in Discord >")
+                            a.code(id='emoji', _t=emoji)
+            with a.footer():
+                a.small(_t='Here is a link to download the file >')
+                a.a(href='../../emoji/v2/' + self.emoji_name + '.html', _t='Download')
+
         time.sleep(0.5)
         print(INFO + "--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--")
+        print(INFO + "--EMOJI BLOCK HAS BEEN CONSTRUCTED SUCCESSFULLY--")
         html = str(a)
         f.write(html)
         p.write(str(time.strftime("%m-%d-%Y ")) + self.x + " >>  " + self.emoji_name + '\n')
         f.close()
         p.close()
+
+        _open = input(CONSOLE + 'Would you like to open the output file? [y/n] >> ').lower().strip('eso')
+        url = 'file:///' + os.getcwd() + '/emoji/v2/' + self.emoji_name + '.html'
+        webbrowser.open(url)
 
 
 def main():
