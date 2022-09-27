@@ -37,6 +37,17 @@ code {
   border-radius: 5px;
   box-shadow: 2px 2px var(--border-shadow);
 }
+footer {
+  color: var(--font-color);
+  width: 50%;
+  text-align: left;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+}
+footer a {
+  font-family: 'Source Code Pro', monospace;
+  color: var(--font-color);
+}
 .body-container {
   background-color: var(--body-container-background);
   width: 50%;
@@ -56,8 +67,8 @@ code {
 #title {
   font-family: var(--code-text-family);
   background-color: var(--item-background);
-  width: fit-content;
-  margin: justify;
+  width: 50%;
+  margin: auto;
   text-align: center;
 
   border-style: inset;
@@ -74,8 +85,11 @@ code {
   border-style: inset;
   padding: 0.85em;
 }
-code #emoji {
+#code-item {
+  height: 175px;
   overflow: scroll;
   display: inline-block;
-  width: 250px;
+  overflow-x: hidden;
 }
+
+/*COMPLETE*/

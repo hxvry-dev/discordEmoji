@@ -94,3 +94,4 @@ def getInput():
 
     f.write(json.dumps(emoji, indent=4))
     f.close()
+# COMPLETE

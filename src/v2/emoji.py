@@ -35,7 +35,6 @@ class Emoji:
         max_emojis = int(msg_len / len(f_en))
         max_rows = int(max_emojis / cols)
         res = ''''''
-        len_res = len(res)
         for i in range(max_rows):
             res += '\n'
             i + 1
@@ -88,23 +87,26 @@ class Emoji:
                         with a.p(id="item"):
                             a.strong(
                                 _t="The Finished block of text for use in Discord >")
-                            a.code(id='emoji', _t=emoji)
-            with a.footer():
-                a.small(_t='Here is a link to download the file >')
-                a.a(href='../../emoji/v2/' + self.emoji_name + '.html', _t='Download')
+                            a.code(id='code-item', _t=emoji)
+                    with a.footer():
+                        a.small(_t='Here is a link to the top of the file >')
+                        a.a(href='../../emoji/v2/' + self.emoji_name + '.html', _t='Output')
+
 
         time.sleep(0.5)
         print(INFO + "--BODY HAS BEEN CONSTRUCTED SUCCESSFULLY--")
         print(INFO + "--EMOJI BLOCK HAS BEEN CONSTRUCTED SUCCESSFULLY--")
         html = str(a)
         f.write(html)
-        p.write(str(time.strftime("%m-%d-%Y ")) + self.x + " >>  " + self.emoji_name + '\n')
+        p.write('\n' + str(time.strftime("%m-%d-%Y ")) + self.x + " >>  " + self.emoji_name)
         f.close()
         p.close()
 
         _open = input(CONSOLE + 'Would you like to open the output file? [y/n] >> ').lower().strip('eso')
-        url = 'file:///' + os.getcwd() + '/emoji/v2/' + self.emoji_name + '.html'
-        webbrowser.open(url)
+        if _open == 'y':
+            print(INFO + "Okay, opening it now...")
+            url = 'file:///' + os.getcwd() + '/emoji/v2/' + self.emoji_name + '.html'
+            webbrowser.open(url)
 
 
 def main():
@@ -114,3 +116,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# COMPLETE
