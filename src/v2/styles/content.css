@@ -80,16 +80,21 @@ footer a {
 #item {
   font-family: var(--general-text-family);
   background-color: var(--item-background);
-  width: fit-content;
+  width: auto;
 
   border-style: inset;
   padding: 0.85em;
 }
-#code-item {
-  height: 175px;
-  overflow: scroll;
+#item strong {
+  width: auto;
   display: inline-block;
-  overflow-x: hidden;
+  text-align: justify;
+}
+#code-item {
+  height: 275px;
+  width: 666px;
+  overflow: scroll;
+  display: block;
 }
 
 /*COMPLETE*/
