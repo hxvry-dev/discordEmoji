@@ -7,19 +7,20 @@ from airium import Airium
 
 CONSOLE = Fore.LIGHTBLACK_EX + "[CONSOLE]  " + Fore.RESET
 INFO = Fore.BLUE + "[INFO]  " + Fore.RESET
+WARN = Fore.RED + "[WARNING]  " + Fore.RESET
 STATS = Fore.GREEN + "-- [STATS]  " + Fore.RESET
 airium = Fore.LIGHTGREEN_EX + "[AIRIUM]  " + Fore.RESET
-
-
+_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+os.chdir(_dir)
 class Emoji:
     def __init__(self):
         self.name = input(
             CONSOLE + "Name of the Emoji as it appears in Discord >> ").lower()
         self.nitro_status = (
-            input(CONSOLE + "Do you have Discord Nitro? [y/n] >> ").lower().strip("eso"))
+            input(CONSOLE + "Do you have Discord Nitro? " + Fore.BLUE + '[y/n]' + Fore.RESET + " >> ").lower().strip("eso"))
         self.nitro = self.getMsgLength()
         self.x = str(random.randint(1, 9999999))
-        self.emoji_name = self.x + '-beta-' + self.name
+        self.emoji_name = self.x + '-' + self.name
 
     def getMsgLength(self):
         if self.nitro_status == "y":
@@ -45,8 +46,8 @@ class Emoji:
         return res
 
     def basic_body(self):
-        f = open("./emoji/v2/" + self.emoji_name + ".html", "w")
-        p = open("./emoji/v2/_file.txt", 'a+')
+        f = open(os.getcwd() + '/emoji/v2/' + self.emoji_name + '.html', "a+")
+        p = open(os.getcwd() + '/emoji/v2/log.txt', 'a+')
         a = Airium()
         emoji = self.makeEmoji()
         max_chars = self.getMsgLength()
@@ -102,7 +103,7 @@ class Emoji:
         f.close()
         p.close()
 
-        _open = input(CONSOLE + 'Would you like to open the output file? [y/n] >> ').lower().strip('eso')
+        _open = input(CONSOLE + 'Would you like to open the output file? ' + Fore.BLUE + '[y/n]' + Fore.RESET + ' >> ').lower().strip('eso')
         if _open == 'y':
             print(INFO + "Okay, opening it now...")
             url = 'file:///' + os.getcwd() + '/emoji/v2/' + self.emoji_name + '.html'

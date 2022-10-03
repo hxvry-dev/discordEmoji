@@ -1,3 +1,4 @@
+import os
 import json
 from colorama import *
 from datetime import *
@@ -8,10 +9,12 @@ intro = "Welcome to the Discord Emoji Generator"
 version = "v0.1.20"
 clock = datetime.now()
 timestamp = clock.strftime("%Y-%m-%d")
-time = clock.strftime("%Y%m%d%H%M")
+time = clock.strftime("%Y%m%d-%H%M")
 emojiTime = clock.strftime("%H:%M:%S - %m/%d/%Y")
 info = Fore.BLUE + "[INFO] " + Fore.RESET
 log = Fore.LIGHTBLACK_EX + "[LOG]  " + Fore.RESET
+_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+os.chdir(_dir)
 spacer = info + "| ------------------------------------------------------ |"
 
 
@@ -37,8 +40,8 @@ def getInput():
     print(spacer)
     inputEmoji = input(log + "| EMOJI >> ")
     preEmoji = ":" + inputEmoji + ":"
-    f = open("./emoji/v1/" + time + "-" + inputEmoji + ".json", "w")
-    with open("./emoji/v1/_file.txt", "a+") as p:
+    f = open(os.getcwd() + '/emoji/v1/' + time + "-" + inputEmoji + ".json", "w")
+    with open(os.getcwd() + "/emoji/v1/log.txt", "a+") as p:
         p.write("\n" + time + " >>  " + inputEmoji)
         p.close()
     answer = str(input(log + "| DO YOU HAVE NITRO? [Y/n] >> ")).lower().strip("eso")

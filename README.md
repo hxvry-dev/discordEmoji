@@ -8,15 +8,21 @@ For reference, please see the files located in the `sample_data` directory.
 
 Here are some steps to get you up and running.
 
-- Clone this repository
-- Run `main.py`, located in `src/v1/main.py`.
-- Supply the necessary configuration information
-- Profit
-  - As a side note, if you are using `v1` of `discordEmoji`, it will automatically save a copy of the emoji you created.
-    - The file is located in the `emoji` directory the name of the sample `v1` output is `202209191744-yes.json`.
-  - If you are using a beta release, you will find that the output will be saved in the same directory
+- Clone this repository :tm:
+- Create a new `virtualenv` by using `python3 -m venv venv`
+- Run `pip3 install -r requirements.txt` to install requirements
+# V1 Setup
 
-# DONE 
+`V1` doesn't have too much functionality, and was more built as a test. However, here's how to use it:
 
-- Re-format the output file to include newlines - **DONE**
-- Make the interface pretty - **DONE**
+- `cd` to the `discordEmoji` directory
+  - Run `./src/v1/main.py` and follow the prompts.
+
+# V2 Setup
+
+`V2` is the go-to for `discordEmoji` usage at this point. I should honestly jut deprecate `v1`, but you never know.
+- `cd` to the `discordEmoji` directory
+- Run `./src/v2/emoji.py` and follow the prompts.
+- As an added feature, `emoji.py` will open the output in a web browser.  
+  If you don't want that, just say so when prompted.
+- This script is just about as simple as `v1`, but it looks a lot cooler :)
