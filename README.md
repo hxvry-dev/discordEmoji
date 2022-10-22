@@ -20,7 +20,7 @@ Here are some steps to get you up and running.
 
 # V2 Setup
 
-`V2` is the go-to for `discordEmoji` usage at this point. I should honestly jut deprecate `v1`, but you never know.
+`V2` is the go-to for `discordEmoji` usage at this point. I should honestly just deprecate `v1`, but you never know.
 - `cd` to the `discordEmoji` directory
 - Run `./src/v2/emoji.py` and follow the prompts.
 - As an added feature, `emoji.py` will open the output in a web browser.  
